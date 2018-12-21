@@ -1,0 +1,51 @@
+<body>
+{% load staticfiles %}
+<table align="center" border="0" bgcolor="orange">
+        <tr>
+            <td colspan="8" align="center" height="50">
+                Company Details
+            </td>
+
+        </tr>
+                <table align="center" border="2" bgcolor="#FFF">
+                    <tr>
+                        <th>Id</th>
+                        <th>Company Name</th>
+                        <th>Hr Name</th>
+                        <th>Email</th>
+                        <th>Purpose</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                    </tr>
+                    {% for x in data %}
+                        <tr>
+                        <td>{{ x.Id }}</td>
+                        <td>{{ x.Name }}</td>
+                        <td>{{ x.HR_Name }}</td>
+                        <td>{{ x.Contact }}</td>
+                        <td>{{ x.Email }}</td>
+                        <td>{{ x.Purpose }}</td>
+                        <td>{{ x.Address }}</td>
+                        {% if x.Status == "pending" %}
+                            <td bgcolor="orange"><b>{{ x.Status }}</b></td>
+                        {% elif x.Status == "approve" %}
+                            <td bgcolor="aqua"><b>{{ x.Status }}</b></td>
+                        {% else %}
+                            <td bgcolor="#90ee90"><b>{{ x.Status }}</b></td>
+                        {% endif %}
+                            <td>
+                                <a href="/company_approve/?c_id={{ x.Id }}">
+                                <img src="{% static 'company_approve.png' %}"width="25" height="25">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/company_decline/?c_id={{ x.Id }}">
+                                <img src="{% static 'company_decline.jpg' %}"width="25" height="25">
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                </table>
+</table>
+</body>

@@ -1,0 +1,36 @@
+<body>
+{% load staticfiles %}
+<form action="/login_validation/" method="post">
+    {% csrf_token %}
+<table align="center " border="0">
+
+    <tr bgcolor="aqua">
+      <td style="color: coral" colspan="2"><marquee direction="left">Admin Login</marquee><br/><br/></td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+             <img src="{% static "adminpicems.jpg" %}">
+        </td>
+        <td>
+            <input type="text" name="admin_name" placeholder="UserName" required>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="password" name="admin_password" placeholder="Password" required> </td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Login"></td>
+    </tr>
+    <tr >
+        <td align="center" colspan="2">
+            <font color="#ff7f50">
+            {{ data}}
+            </font>
+
+        </td>
+    </tr>
+
+
+</table>
+</form>
+</body>

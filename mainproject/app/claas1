@@ -1,0 +1,7 @@
+
+  a=100
+def fun1():
+     print(a)
+     fun1()
+
+

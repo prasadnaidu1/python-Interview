@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOB</title>
+</head>
+<body>
+<form action="/date/" method="post">
+    {% csrf_token %}
+    <table align="center" border="3">
+        <tr>
+            <td>Student id
+                <input type="number" placeholder="id" name="id" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Date of Birth
+                <input type="date"   value="dob" min="" max="2018-10-12" name="dob" ><br>
+            </td>
+        </tr><tr>
+            <td>Date of Joining
+                <input type="date"   value="doj" min="2018-10-11" max="" name="doj" > <br>
+            </td>
+    </tr>
+        <tr>
+            <td>Bus Ticket Booking
+                <input type="date"   value="dob" min="2018-10-11" max="2019-12-12" name="dobo" ><br>
+            </td>
+        </tr>
+<tr>
+<td><input type="submit" value="send" align="center"></td>
+        </tr>
+
+
+
+        <tr>
+            <td>{{ msg }}</td>
+        </tr>
+</table>
+    </form>
+
+
+
+</body>
+</html>

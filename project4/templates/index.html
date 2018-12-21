@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/register/" method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        <td>
+            Course Details
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="course" value="Core python">Core Python
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="course" value="Adv Python">Adv Python
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="course" value="Django">Django
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Send">
+        </td>
+    </tr>
+</table>
+    </form>
+<table align="center">
+    {% for x in res %}
+        <tr>
+        <td>{{ x }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

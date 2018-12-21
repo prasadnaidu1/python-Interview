@@ -1,0 +1,678 @@
+
+Q1).Explain what is Django?
+Ans1: Django is a web framework in python to develop a web application in python.
+Django is a free and open source web application framework, written in Python.
+Q2).Mention what are the features available in Django?
+Ans2: Features available in Django are
+
+Admin Interface (CRUD)
+Templating
+Form handling
+Internationalization
+Session, user management, role-based permissions
+Object-relational mapping (ORM)
+Testing Framework
+Fantastic Documentation
+Q3).Mention the architecture of Django architecture?
+Ans3: Django architecture consists of
+
+Models: It describes your database schema and your data structure
+Views: It controls what a user sees, the view retrieves data from appropriate models and execute any calculation made to the data and pass it to the template
+Templates: It determines how the user sees it. It describes how the data received from the views should be changed or formatted for display on the page
+Controller: The Django framework and URL parsing
+Q4).Why Django should be used for web-development?
+Ans4:
+
+It allows you to divide code modules into logical groups to make it flexible to change
+To ease the website administration, it provides auto-generated web admin
+It provides pre-packaged API for common user tasks
+It gives you template system to define HTML template for your web page to avoid code duplication
+It enables you to define what URL be for a given function
+It enables you to separate business logic from the HTML
+Everything is in python
+Q5). Explain how you can create a project in Django?
+Ans5: To start a project in Django, you use command $ django-admin.py and then use the command
+Project
+_init_.py
+manage.py
+settings.py
+urls.py
+
+python Django Training in Bangalore
+Q6). Explain how you can set up the Database in Django?
+Ans6: You can use the command edit mysite/setting.py , it is a normal python module with module level representing Django settings.
+Django uses SQLite by default; it is easy for Django users as such it won’t require any other type of installation. In the case your database choice is different that you have to the following keys in the DATABASE ‘default’ item to match your database connection settings
+
+Engines: you can change database by using ‘django.db.backends.sqlite3’ , ‘django.db.backeneds.mysql’, ‘django.db.backends.postgresql_psycopg2’, ‘django.db.backends.oracle’ and so on
+Name: The name of your database. In the case if you are using SQLite as your database, in that case database will be a file on your computer, Name should be a full absolute path, including file name of that file.
+If you are not choosing SQLite as your database then setting like Password, Host, User, etc. must be added.
+
+Q7). Give an example how you can write a VIEW in Django?
+Ans7: Views are Django functions that take a request and return a response.  To write a view in Django we take a simple example of “Guru99_home” which uses the template Guru99_home.html and uses the date-time module to tell us what the time is whenever the page is refreshed.  The file we required to edit is called view.py, and it will be inside mysite/myapp/
+
+Copy the below code into it and save the file
+       from datatime import datetime
+      from django.shortcuts import render
+     def home (request):
+return render(request, ‘Guru99_home.html’, {‘right_now’: datetime.utcnow()})
+Once you have determined the VIEW, you can uncomment this line in urls.py
+# url ( r ‘^$’ , ‘mysite.myapp.views.home’ , name ‘Guru99’),
+The last step will reload your web app so that the changes are noticed by the web server.
+
+Q8).Explain how you can setup static files in Django?
+Ans8: There are three main things required to set up static files in Django
+
+Set STATIC_ROOT in settings.py
+run manage.py collectsatic
+set up a Static Files entry on the PythonAnywhere web tab
+Q9).Mention what does the Django templates consists of?
+
+Ans9: The template is a simple text file.  It can create any text-based format like XML, CSV, HTML, etc.  A template contains variables that get replaced with values when the template is evaluated and tags (% tag %) that controls the logic of the template.
+
+Q10). Explain the use of session framework in Django?
+Ans10: In Django, the session framework enables you to store and retrieve arbitrary data on a per-site-visitor basis.  It stores data on the server side and abstracts the receiving and sending of cookies.  Session can be implemented through a piece of middleware.
+
+iteanz
+Q11).Explain how you can use file based sessions?
+Ans11: To use file based session you have to set the SESSION_ENGINE settings to “django.contrib.sessions.backends.file”
+
+Q12).Explain the migration in Django and how you can do in SQL?
+Ans12: Migration in Django is to make changes to your models like deleting a model, adding a field, etc. into your database schema.  There are several commands you use to interact with migrations.
+
+Migrate
+Makemigrations
+Sqlmigrate
+To do the migration in SQL, you have to print the SQL statement for resetting sequences for a given app name.
+django-admin.py sqlsequencreset
+Use this command to generate SQL that will fix cases where a sequence is out sync with its automatically incremented field data.
+
+Q13).Mention what command line can be used to load data into Django?
+Ans13: To load data into Django you have to use the command line Django-admin.py loaddata. The command line will searches the data and loads the contents of the named fixtures into the database.
+
+Q14).Explain what does django-admin.py makemessages command is used for?
+Ans14: This command line executes over the entire source tree of the current directory and abstracts all the strings marked for translation.  It makes a message file in the locale directory.
+
+Q15). List out the inheritance styles in Django?
+Ans15: In Django, there is three possible inheritance styles
+
+Abstract base classes: This style is used when you only wants parent’s class to hold information that you don’t want to type out for each child model
+Multi-table Inheritance: This style is used If you are sub-classing an existing model and need each model to have its own database table
+Proxy models: You can use this model, If you only want to modify the Python level behavior of the model, without changing the model’s fields
+Q16).Mention what does the Django field class types?
+Ans16: Field class types determines
+
+The database column type
+The default HTML widget to avail while rendering a form field
+The minimal validation requirements used in Django admin and in automatically generated forms
+Q17).What constitutes  Django templates ?
+Ans17: Template can create formats like XML,HTML and CSV(which are text based formats). In general terms template is a simple text file. It is made up of variables that will later be replaced by values after the template is evaluated and has tags which will control template’s logic.
+
+Q18).List some typical usage of middlewares in Django.
+Ans18: Some of the typical usage of middlewares in Django are: Session management, user authentication, cross-site request forgery protection, content Gzipping, etc.
+
+Q19).How do you use views in Django? 
+Ans19: Views will take request to return response.  Let’s write a view in Django :  “example” using template example.html , using  the date-time module to tell us exact time of reloading the page.  Let’s edit a file called view.py, and it will be inside randomsite/randomapp/
+To do this save and copy following into a file:
+Default
+
+ 
+
+1
+2
+3
+4
+5
+6
+7
+8	from datatime import datetime
+ 
+
+from django.shortcuts import render
+
+ 
+
+def home (request):
+
+ 
+
+ 
+
+return render(request, ‘Guru99_home.html’, {‘right_now’: datetime.utcnow()})
+
+You have to determine the  VIEW first, and then uncomment this line located in file urls.py
+
+Default
+
+ 
+
+1	# url ( r ‘^$’ , ‘randomsite.randomapp.views.home’ , name ‘example’),
+This will reload the site making changes obvious.
+
+Q20).How do you make a Django app that is test driven and will display Fibonacci’s sequence?
+Ans20: Keep in mind that it should take an index number and output the sequence. Additionally, there should be a page that shows the most recent generated sequences.
+
+Following is one of the solution for generating fibonacci series:
+Default
+
+ 
+
+1
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+def fib(n):
+“Complexity: O(log(n))”
+
+if n <= 0:
+
+return 0
+
+i = n – 1
+
+(a, b) = (1, 0)
+
+(c, d) = (0, 1)
+
+while i > 0:
+
+if i % 2:
+
+(a, b) = (d * b + c * a,  d * (b + a) + c * b)
+
+(c, d) = (c * c + d * d, d * (2 * c + d))
+
+i = i / 2
+
+return a + b
+
+Below is a model that would keep track of latest numbers:
+
+Default
+
+ 
+
+1
+2
+
+3
+
+4
+
+5
+
+6
+
+from django.db import models
+ 
+
+class Fibonacci(models.Model):
+
+parameter = models.IntegerField(primary_key=True)
+
+result = models.CharField(max_length=200)
+
+time = models.DateTimeField()
+
+For view, you can simply use the following code:
+
+Default
+
+ 
+
+1
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+from models import Fibonacci
+ 
+
+def index(request):
+
+result = None
+
+if request.method==”POST”:
+
+try:
+
+n=int(request.POST.get(‘n’))
+
+except:
+
+return Http404
+
+try:
+
+result = Fibonacci.objects.get(pk=n)
+
+result.time = datetime.now()
+
+except DoesNotExist:
+
+result = str(fib(n))
+
+result = Fibonacci(n, result, datetime.now())
+
+result.save()
+
+return direct_to_template(request, ‘base.html’, {‘result’:result.result})
+
+You could use models to get last ‘n’ entities.
+
+Python Training in Banglore
+Q21).What makes up Django architecture?
+Ans21: Django runs on MVC architecture. Following are the components that make up django architecture:
+
+Models: Models elaborate back-end stuffs like database schema.(relationships)
+Views: Views control what is to be shown to end-user.
+Templates: Templates deal with formatting of view.
+Controller: Takes entire control of Models.A MVC framework can be compared to a Cable TV with remote. A Television set is View(that interacts with end user), cable provider is model(that works in back-end) and Controller is remote that controls which channel to select and display it through view.
+Q22). What does session framework do in django framework ?
+Ans22: Session framework in django will store data on server side and interact with end-users. Session is generally used with a middle-ware. It also helps in receiving and sending cookies for authentication of a user.
+
+ 
+
+Q23).Can you create singleton object in python?If yes, how do you do it?
+Ans23: Yes, you can create singleton object. Here’s how you do it :
+
+Default
+
+1
+2
+
+3
+
+4
+
+5
+
+class Singleton(object):
+def __new__(cls,*args,**kwargs):
+
+if not hasattr(cls,’_inst’):
+
+cls._inst = super(Singleton,cls).__new__(cls,*args,**kwargs)
+
+return cls._inst
+
+ 
+
+Q24).Mention caching strategies that you know in Django!
+Ans24: Few caching strategies that are available in Django are as follows:
+
+File sytem caching
+In-memory caching
+Using Memcached
+Database caching
+Q25).What are inheritance type in Django?
+Ans25: There are 3 inheritance types in Django
+
+Abstract base classes
+Multi-table Inheritance
+Proxy models
+Q26).What do you think are limitation of Django Object relation mapping(ORM) ?
+
+Ans26: If the data is complex and consists of multiple joins using the SQL  will be clearer.
+
+If Performance is a concern for your, ORM aren’t your choice. Genrally. Object-relation-mapping are considered good option to construct an optimized query, SQL has an upper hand when compared to ORM.
+
+Q27):How to Start Django project with ‘Hello World!’? Just say hello world in django project.
+Ans27: There are 7 steps ahead to start Django project.
+
+Step 1: Create project in terminal/shell
+
+f2finterview:~$ django-admin.py startproject sampleproject
+
+Step 2: Create application
+
+f2finterview:~$ cd sampleproject/
+
+f2finterview:~/sampleproject$ python manage.py startapp sampleapp
+
+Step 3: Make template directory and index.html file
+
+f2finterview:~/sampleproject$ mkdir templates
+
+f2finterview:~/sampleproject$ cd templates/
+
+f2finterview:~/sampleproject/templates$ touch index.html
+
+Step 4: Configure initial configuration in settings.py
+
+Add PROJECT_PATH and PROJECT_NAME
+
+import os
+
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+
+PROJECT_NAME = ‘sampleproject’
+
+Add Template directories path
+
+TEMPLATE_DIRS = (
+
+os.path.join(PROJECT_PATH, ‘templates’),
+
+)
+
+Add Your app to INSTALLED_APPS
+
+INSTALLED_APPS = (
+
+‘sampleapp’,
+
+)
+
+Step 5: Urls configuration in urls.py
+
+from django.conf.urls.defaults import patterns, include, url
+
+ 
+
+urlpatterns = patterns(”,
+
+url(r’^$’, ‘sampleproject.sampleapp.views.index’, name=’index’),
+
+)
+
+Step 6: Add index method in views.py
+
+from django.shortcuts import render_to_response, get_object_or_404
+
+from django.template import RequestContext
+
+ 
+
+def index(request):
+
+welcome_msg = ‘Hello World’
+
+return render_to_response(‘index.html’,locals(),context_instance=RequestContext(request))
+
+Step7: Add welcome_msg in index.html
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<h1>My First Heading For Say…</h1>
+
+<p>{{welcome_msg}}</p>
+
+</body>
+
+</html>
+
+Q28).How to login with email instead of username in Django?
+Ans28: Use bellow sample method to login with email or username.
+
+from django.conf import settings
+from django.contrib.auth import authenticate, login, REDIRECT_FIELD_NAME
+from django.shortcuts import render_to_response
+from django.contrib.sites.models import Site
+from django.template import Context, RequestContext
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
+@csrf_protect
+@never_cache
+def signin(request,redirect_field_name=REDIRECT_FIELD_NAME,authentication_form=LoginForm):
+redirect_to = request.REQUEST.get(redirect_field_name, settings.LOGIN_REDIRECT_URL)
+form = authentication_form()
+current_site = Site.objects.get_current()
+if request.method == “POST”:
+pDict =request.POST.copy()
+form = authentication_form(data=request.POST)
+if form.is_valid():
+username = form.cleaned_data[‘username’]
+password = form.cleaned_data[‘password’]
+try:
+user = User.objects.get(email=username)
+username = user.username
+except User.DoesNotExist:
+username = username
+user = authenticate(username=username, password=password)
+# Log the user in.
+login(request, user)
+return HttpResponseRedirect(redirect_to)
+else:
+form = authentication_form()
+request.session.set_test_cookie()
+if Site._meta.installed:
+current_site = Site.objects.get_current()
+else:
+current_site = RequestSite(request)
+return render_to_response(‘login.html’,locals(), context_instance=RequestContext(request))
+
+Q29).How Django processes a request?
+Ans29: When a user requests a page from your Django-powered site, this is the algorithm the system follows to determine which Python code to execute:
+Django determines the root URLconf module to use. Ordinarily, this is the value of the ROOT_URLCONF setting, but if the incoming HttpRequest object has an attribute called urlconf (set by middleware request processing), its value will be used in place of the ROOT_URLCONF setting.
+Django loads that Python module and looks for the variable urlpatterns. This should be a Python list, in the format returned by the function django.conf.urls.patterns()
+Django runs through each URL pattern, in order, and stops at the first one that matches the requested URL.
+
+Once one of the regexes matches, Django imports and calls the given view, which is a simple Python function (or a class based view). The view gets passed an HttpRequest as its first argument and any values captured in the regex as remaining arguments.
+
+If no regex matches, or if an exception is raised during any point in this process, Django invokes an appropriate error-handling view.
+
+Q30).How to filter latest record by date in Django?
+Ans30: Messages(models.Model):
+     message_from = models.ForeignKey(User,related_name=”%(class)s_from”)
+message_to = models.ForeignKey(User,related_name=”%(class)s_to”)
+message=models.CharField(max_length=140,help_text=”Your message”)
+created_on = models.DateTimeField(auto_now_add=True)
+class Meta:
+db_table = ‘messages’
+
+Query:messages = Messages.objects.filter(message_to = user).order_by(‘-created_on’)[0]
+
+Output:
+
+message_from | message_to  | message                 | created_on
+
+——————|—————–|——————–|——————–
+
+Stephen        | Anto              | Hi, How are you? | 2012-10-09 14:27:48
+
+Amazon web Services training in Bangalore
+Q31).How to filter data from Django models using python datetime?
+Ans31: Assume Bellow model for storing messages with timelines
+class Message(models.Model):
+from = models.ForeignKey(User,related_name = “%(class)s_from”)
+to = models.ForeignKey(User, related_name = “%(class)s_to”)
+msg = models.CharField(max_length=255)
+rating = models.IntegerField(blank=’True’,default=0)
+created_on = models.DateTimeField(auto_now_add=True)
+updated_on = models.DateTimeField(auto_now=True)
+Filter messages with specified Date and Time
+today = date.today().strftime(‘%Y-%m-%d’)
+
+yesterday = date.today() – timedelta(days=1)
+yesterday = yesterday.strftime(‘%Y-%m-%d’)
+
+this_month = date.today().strftime(‘%m’)
+last_month = date.today() – timedelta(days=32)
+last_month = last_month.strftime(‘%m’)
+this_year = date.today().strftime(‘%Y’)
+
+last_year = date.today() – timedelta(days=367)
+last_year = last_year.strftime(‘%Y’)
+
+today_msgs = Message.objects.filter(created_on__gte=today).count()
+yesterday_msgs = Message.objects.filter(created_on__gte=yesterday).count()
+this_month_msgs = Message.objects.filter(created_on__month=this_month,created_on__year=this_year).count()
+last_month_msgs = Message.objects.filter(created_on__month=last_month,created_on__year=this_year).count()
+this_year_msgs = Message.objects.filter(created_on__year=this_year).count()
+last_year_msgs = Message.objects.filter(created_on__year=last_year).count()
+
+Q32). What does Django mean?
+Ans32: Django is named after Django Reinhardt, a gypsy jazz guitarist from the 1930s to early 1950s who is known as one of the best guitarists of all time.
+
+Q33). Which architectural pattern does Django Follow?
+Ans33: Django follows Model-View Controller (MVC) architectural pattern.
+
+Q34). Is Django a high level web framework or low level framework?
+Ans34: Django is a high level Python’s web framework which was designed for rapid development and clean realistic design.
+
+Q35). How would you pronounce Django?
+Django is pronounced JANG-oh. Here D is silent.
+
+ 
+
+Q36). How does Django work?
+Ans36: Django can be broken into many components:
+Models.py file: This file defines your data model by extending your single line of code into full database tables and add a pre-built administration section to manage content.
+Urls.py file: It uses regular expression to capture URL patterns for processing.
+Views.py file: It is the main part of Django. The actual processing happens in view.
+When a visitor lands on Django page, first Django checks the URLs pattern you have created and uses information to retrieve the view. After that view processes the request, querying your database if necessary, and passes the requested information to template.
+After that the template renders the data in a layout you have created and displays the page.
+
+Q37).Which foundation manages Django web framework?
+Ans37: Django web framework is managed and maintained by an independent and non-profit organization named Django Software Foundation (DSF).
+
+Q38).Is Django stable?
+Ans38: Yes, Django is quite stable. Many companies like Disqus, Instagram, Pinterest, and Mozilla have been using Django for many years.
+
+Q39)What are the features available in Django web framework?
+Ans39: Features available in Django web framework are:
+
+Admin Interface (CRUD)
+Templating
+Form handling
+Internationalization
+Session, user management, role-based permissions
+Object-relational mapping (ORM)
+Testing Framework
+Fantastic Documentation
+Q40). What are the advantages of using Django for web development?
+Ans40:
+
+It facilitates you to divide code modules into logical groups to make it flexible to change.
+It provides auto-generated web admin to make website administration easy.
+It provides pre-packaged API for common user tasks.
+It provides template system to define HTML template for your web page to avoid code duplication.
+It enables you to define what URL is for a given function.
+It enables you to separate business logic from the HTML.
+Big Data Hadoop Training in Bangalore
+Q41) How to create a project in Django?
+Ans41: To start a project in Django, use the command $django-admin.py and then use the following command:
+Project
+_init_.py
+manage.py
+settings.py
+urls.py
+
+Q42) What are the inheritance styles in Django?
+Ans42: There are three possible inheritance styles in Django:
+1) Abstract base classes: This style is used when you only want parent’s class to hold information that you don’t want to type out for each child model.
+2) Multi-table Inheritance: This style is used if you are sub-classing an existing model and need each model to have its own database table.
+3) Proxy models: This style is used, if you only want to modify the Python level behavior of the model, without changing the model’s fields.
+14) How can you set up the database in Djanago?
+To set up a database in Django, you can use the command edit mysite/setting.py , it is a normal python module with module level representing Django settings.
+By default, Django uses SQLite database. It is easy for Django users because it doesn’t require any other type of installation. In the case of other database you have to the following keys in the DATABASE ‘default’ item to match your database connection settings.
+
+Engines: you can change database by using ‘django.db.backends.sqlite3’ , ‘django.db.backeneds.mysql’, ‘django.db.backends.postgresql_psycopg2’, ‘django.db.backends.oracle’ and so on
+
+Name: The name of your database. In the case if you are using SQLite as your database, in that case database will be a file on your computer, Name should be a full absolute path, including file name of that file.
+Note: You have to add setting likes setting like Password, Host, User, etc. in your database, if you are not choosing SQLite as your database.
+
+Q43).What does the Django templates contain?
+Ans43: A template is a simple text file. It can create any text-based format like XML, CSV, HTML, etc. A template contains variables that get replaced with values when the template is evaluated and tags (%tag%) that controls the logic of the template.
+
+Q44).Is Django a content management system (CMS)?
+Ans44: No, Django is not a CMS. Instead, it is a Web framework and a programming tool that makes you able to build websites.
+
+Q45).What is the use of session framework in Django?
+Ans45: The session framework facilitates you to store and retrieve arbitrary data on a per-site visitor basis. It stores data on the server side and abstracts the receiving and sending of cookies. Session can be implemented through a piece of middleware.
+
+Q46).How can you set up static files in Django?
+Ans46: There are three main things required to set up static files in Django:
+1) Set STATIC_ROOT in settings.py
+2) run manage.py collectsatic
+3) set up a Static Files entry on the PythonAnywhere web tab
+
+Q47). How to use file based sessions?
+Ans47:You have to set the SESSION_ENGINE settings to “django.contrib.sessions.backends.file” to use file based session.
+
+Q48).What is some typical usage of middlewares in Django?
+Ans48: Some usage of middlewares in Django is:
+
+Session management,
+Use authentication
+Cross-site request forgery protection
+Content Gzipping, etc.
+Q49).What does of Django field class types do?
+Ans49: The Django field class types specify:
+
+The database column type.
+The default HTML widget to avail while rendering a form field.
+The minimal validation requirements used in Django admin.
+Automatic generated forms.
+Q50).What is the usage of Django-admin.py and manage.py?
+Ans50: Django-admin.py: It is a Django’s command line utility for administrative tasks.
+Manage.py: It is an automatically created file in each Django project. It is a thin wrapper around the Django-admin.py. It has the following usage:
+
+It puts your project’s package on sys.path.
+It sets the DJANGO_SETTING_MODULE environment variable to points to your project’s setting.py file.
+Q51).What are signals in Django?
+Ans51: Signals are pieces of code which contain information about what is happening. Dispatcher is used to send the signals and listen for those signals.
+
+Q52).What are the two important parameters in signals?
+Ans52: Two important parameters in signals are:
+
+Receiver: It specifies the callback function which will be connected to the signal.
+Sender: It specifies a particular sender to receive signal from.
+ 
+
+Q53).What command line is used to load data into Django?
+Ans53: The command line “Django-admin.py loaddata” is used to load data into Django. The command line will searches the data and loads the contents of the named fixtures into the database.
+

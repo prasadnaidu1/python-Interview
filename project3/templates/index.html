@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prasad</title>
+</head>
+<body>
+<form action="/show/" method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        <th>
+            Course Details
+        </th>
+    </tr>
+    <input type="number" value="{{ key }}" placeholder="sno" name="sno" required>
+    <tr>
+        <td>
+            <input type="checkbox"  value="{{ dates }}" name="course" value="core python">CorePython
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="course" value="adv python">AdvPython
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="course" value="Django">Django
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="course" value="Flask">Flask
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="course" value="project">Project
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Show">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ msg }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/register/" >view details</a>
+        </td>
+    </tr>
+</table>
+    </form>
+
+
+</body>
+</html>

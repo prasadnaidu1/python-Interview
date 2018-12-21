@@ -1,0 +1,113 @@
+<body>
+<table align="center" border="0">
+    <tr>
+        <td colspan="2" align="center" height="50" bgcolor="orange">
+            Course Details
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="/course_details/">
+        {% csrf_token %}
+        <table align="center" border="0">
+            <tr>
+                <td align="center" style="background: #2ce16a">
+                    <marquee  direction="right">Add New Course</marquee>
+                </td>
+            </tr>
+                {% for i, val in two.items %}
+                    {% if not  val%}
+                        <tr>
+                        <td>
+                            <input type="text" name="course_id" placeholder="ID" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="text" name="course_name" placeholder="Name" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="number" name="course_fees" placeholder="Fees" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="number" name="course_duration" placeholder="Duration(In days)" required>
+                        </td>
+                        </tr>
+                    {% else %}
+                        {% for x in val %}
+                             <tr>
+                        <td>
+                            <input type="text" name="course_id" value="{{ x.Id }}" placeholder="ID" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="text" name="course_name" value="{{ x.Name }}" placeholder="Name" required>
+                        </td>
+                        </tr>
+                          <tr>
+                        <td>
+                            <input type="number" name="course_fees" value="{{ x.Fee }}" placeholder="Fees" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="number" name="course_duration" value="{{ x.Duration }}" placeholder="Duration(In days)" required>
+                        </td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                    <tr>
+                    <td>
+                        <input type="submit" value="Save">
+                    </td>
+                    </tr>
+
+        </table>
+    </form>
+        </td>
+    <td>
+        <table align="center" border="2">
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>fees</th>
+            <th>Duration</th>
+            <th>update</th>
+            <th>delete</th>
+            </tr>
+            {% for x,val in one.items  %}
+                {% for i in val %}
+                   <tr>
+                   <td>{{ i.Id }}</td>
+                   <td>{{ i.Name }}</td>
+                   <td>{{ i.Fee }}</td>
+                   <td>{{ i.Duration }}</td>
+                   <td><form action="/course_update/"method="post">
+                       {% csrf_token %}
+                       <input type="hidden" name="course_update_id" value="{{ i.Id}}">
+                       <input type="submit" value="update">
+                   </form> </td>
+                   <td><form action="/course_delete/"method="post">
+                       {% csrf_token %}
+                       <input type="hidden" name="course_delete_id" value="{{ i.Id}}">
+                       <input type="submit" value="delete">
+                   </form> </td>
+                   </tr>
+
+
+                {% endfor %}
+             {% endfor %}
+
+        </table>
+            </table>
+        </td>
+    </tr>
+
+</table>
+</body>

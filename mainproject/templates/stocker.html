@@ -1,0 +1,21 @@
+<body>
+<h1 align="center" style="color: coral">Stocker Login</h1>
+<form action="/stockerlogin/" method="post">
+    {% csrf_token %}
+<table align="center" >
+    <tr>
+        <td>
+            <input type="text" name="sname" placeholder="UserName" required>
+        </td>
+    </tr>
+    <tr><td>
+        <input required placeholder="Password" type="password" name="pwd">
+    </td></tr>
+        <tr><td>
+            <input type="submit" value="Login">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/stockerregiter/">Regiter Now</a>
+        </td></tr>
+
+</table>
+</form>
+</body>

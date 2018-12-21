@@ -1,0 +1,111 @@
+
+<body>
+<table align="center" border="0">
+    <tr>
+        <td colspan="2" align="center" height="50" bgcolor="green">
+            Student Details
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="/student_details/">
+        {% csrf_token %}
+            <table align="center" border="1">
+            <tr>
+                <td align="center" style="background: #2ce16a">
+                    <marquee  direction="right">Add New Student</marquee>
+                </td>
+            </tr>
+                {% for i, val in two.items %}
+                    {% if not  val%}
+                        <tr>
+                        <td>
+                            <input type="text" name="student_id" placeholder="ID" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="text" name="student_name" placeholder="Name" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="number" name="student_contact" placeholder="Contact" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="email" name="student_email" placeholder="Email" required>
+                        </td>
+                        </tr>
+
+                    {% else %}
+                        {% for x in val %}
+                             <tr>
+                        <td>
+                            <input type="text" name="student_id" value="{{ x.Id }}" placeholder="ID" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="text" name="student_name" value="{{ x.Name }}" placeholder="Name" required>
+                        </td>
+                        </tr>
+                          <tr>
+                        <td>
+                            <input type="number" name="student_contact" value="{{ x.Contact}}" placeholder="Contact" required>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td>
+                            <input type="email" name="student_email" value="{{ x.Email}}" placeholder="Email" required>
+                        </td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                    <tr>
+                    <td>
+                        <input type="submit" value="Save">
+                    </td>
+                    </tr>
+
+        </table>
+    </form>
+        </td>
+    <td>
+        <table align="center" border="2">
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>delete</th>
+            </tr>
+            {% for x,val in one.items  %}
+                {% for i in val %}
+                   <tr>
+                   <td>{{ i.Id }}</td>
+                   <td>{{ i.Name }}</td>
+                   <td>{{ i.Contact}}</td>
+                   <td>{{ i.Email }}</td>
+                   <td>{{ i.Password }}</td>
+                   <td><form action="/student_delete/"method="post">
+                       {% csrf_token %}
+                       <input type="hidden" name="student_delete_id" value="{{ i.Id}}">
+                       <input type="submit" value="delete">
+                   </form> </td>
+                   </tr>
+
+
+                {% endfor %}
+             {% endfor %}
+
+        </table>
+            </table>
+        </td>
+    </tr>
+
+</table>
+</body>

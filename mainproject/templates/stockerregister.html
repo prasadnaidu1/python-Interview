@@ -1,0 +1,35 @@
+<body>
+<h1 align="center" style="color: coral">StockerRegistation</h1>
+<table align="center">
+    <form action="/stockerregiter/" method="post">
+        {% csrf_token %}
+        <tr>
+            <td>
+                <input type="text" name="srname" placeholder="Name" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="email" name="sremail" required placeholder="Email Id">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" name="srcontact" placeholder="Contact" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input required placeholder="Password" type="password" name="srpassword">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save" align="center" style="color: cadetblue">
+            </td>
+        </tr>
+    </form>
+</table>
+
+</body>

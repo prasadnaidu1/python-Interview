@@ -1,0 +1,282 @@
+`			Django Interview Questions
+			--------------------------
+
+
+1)How does Django work?
+A)  Django can be broken into several components:
+
+	* Models.py file: This file defines your data model by extending your single code line 
+			  into full database tables and add a pre-built administration section to manage content.
+
+	* Urls.py file: It uses a habitual expression to confine URL patterns for processing.
+
+	* Views.py file: It is the main part of Django. The actual processing happens in view.
+
+2)What is the name of the Foundation which manages Django web framework?
+
+A) Django web framework is managed and maintained by an independent 
+   and non-profit organization named Django Software Foundation (DSF).
+
+3)Name the features available in Django web framework?
+
+A) Features available in Django web framework are:
+
+	* Admin Interface (CRUD)
+	* Templating
+	* Form handling
+	* Internationalization
+	* Session, user management, role-based permissions
+	* Object-relational mapping (ORM)
+	* Testing Framework
+	* Fantastic Documentation
+4) What are the advantages of using Django for web development?
+
+A) Auto-generated web admin is provided by Django to make website administration easy.
+   Pre-packaged API is also available for common user tasks.
+   Business logic can be separated from the HTML using this framework.
+   You can even divide the code modules into logical groups so as to make it flexible for changing.
+   Template system is being provided so as to define HTML template for your web page to avoid code duplication.
+
+5) What is the process of creating a project in Django?
+
+   To start a project in Django, use the command $django-admin.py and then use the following command:
+
+	Project
+
+		* _init_.py
+
+		* manage.py
+
+		* settings.py
+
+		* urls.py
+
+
+6) Is Django a content management system (CMS)?
+
+A)   No, Django is not a Content Management System (CMS). Instead, it is a Web framework 
+     and a programming tool that helps you in building elegant websites.
+
+7) What does the Django templates contain?
+
+A) A template is a simple text file. It can create any text-based format like 
+   XML, CSV, HTML, etc. A template contains variables that get replaced with values
+   when the template is evaluated and tags (%tag%) that control the logic of the template.
+ 
+8) What is the use of session framework in Django?
+
+A) The session framework helps you in storing and retrieving arbitrary data on a per-site visitor basis.
+   The data is stored on the server side and abstracts the receiving and sending of cookies. 
+   We can implement sessions through a piece of middleware.
+
+9) How to use file based sessions?
+
+A) You have to set the SESSION_ENGINE settings to “django.contrib.sessions.backends.file” to use file-based session.
+
+10) What is some typical usage of middlewares in Django?
+
+A) Middleware is a function that acts on or transforms a request/response before/after .
+   it passes through the view layer (e.g. adding the user object to the request)
+	Some usage of middlewares in Django is:
+	It can be used for Session management,
+	User authentication can be done with the help of this.
+	It helps in Cross-site request forgery protection
+	Content Gzipping, etc.
+
+11) What is the usage of Django-admin.py and manage.py?
+
+A) Django-admin.py: It is a Django’s command line utility for administrative tasks.
+   Manage.py: It is an automatically created file in each Django project. 
+   It is a thin wrapper around the Django-admin.py. It has the following usage:
+
+	It puts your project’s package on sys.path.
+	It sets the DJANGO_SETTING_MODULE environment variable to points to your project’s setting.py file.
+.
+12) What are signals in Django?
+
+A) Signal are inbuilt utility in Django. They allow to execute some piece of code based on 
+   some action or event is occurred in framework something like a new user register, on delete of a record.
+   Below is the list of some inbuilt signal in Django.
+	* pre_save and post_save.
+	* pre_delete and post_delete
+	* pre_request and post_request
+	* pre_request and post_request
+
+13) Is Django free?
+
+A) Yes, Django is free open source web framework for Python
+
+
+14) Django is based on which design pattern.
+
+A) Django closely follows the MVC (Model View Controller) design pattern, however, it does use its own logic in the implementation.
+   Because the “C” is handled by the framework itself and most of the excitement 
+   in Django happens in models, templates, and views, Django is often referred to as an MTV framework.
+   In the MTV development pattern:
+
+	M stands for “Model,” the data access layer. 
+		This layer contains anything and everything about the data:
+		 how to access it, how to validate it, which behaviors it has, and the relationships between the data.
+	T stands for “Template,” the presentation layer. 	
+		This layer contains presentation-related decisions:	
+		 how something should be displayed on a Web page or other type of document.
+	V stands for “View,” the business logic layer. 	
+		This layer contains the logic that accesses the model and defers to the appropriate template(s). 
+		You can think of it as the bridge between models and templates.
+
+	Further reading https://djangobook.com/model-view-controller-design-pattern/
+
+
+15) When and who create Django?
+
+A) According to https://en.wikipedia.org/wiki/Django_(web_framework),
+   Django was created in the fall of 2003, when the web programmers at the Lawrence Journal-World newspaper, 
+   Adrian Holovaty and Simon Willison, began using Python to build applications. 
+   It was released publicly under a BSD license in July 2005. The framework was named after guitarist Django Reinhardt.
+
+.
+16) List server requirement to install Django Framework.
+
+A) As Django is Python Framework, 
+	In order to install Django Python is required.Django comes with an inbuilt lightweight web server 
+	that you can use for the testing purpose.If you are using Django on production Apache with mod_wsgi is required.
+
+17) List the database backends supported by Django Framework?
+
+A) Django officially supports four database backends, they are
+
+	* PostgreSQL
+	* MySQL
+	* SQLite
+	* Oracle
+   In addition to these, you can also use following 3rd parties
+
+	SAP SQL Anywhere
+	IBM DB2
+	Microsoft SQL Server
+	Firebird
+	ODBC
+
+18) What is recommended way to install Django?
+
+A) Installing using pip is the recommended way to install Django Framework.
+   Below are the steps to install official release of Django with pip
+
+	Install pip.
+	Configure virtualenv and virtualenvwrapper
+	Once virtual environment is created and activated, enter the command pip install Django to install Django
+ 
+19) How to install the development version of Django
+
+A) Follow the below steps to Install the development version of Django Framework.
+
+   Check out Django’s main development branch
+  $ git clone https://github.com/django/django.git 
+  Make sure that the Python interpreter can load Django’s code. 
+  The most convenient way to do this is to use virtualenv, virtualenvwrapper, and pip.
+ After setting up and activating the virtualenv, run the following command:
+ $ pip install -e django/
+ Source:https://docs.djangoproject.com/en/2.0/topics/install/
+
+
+20) Where are Django migrations stored?
+
+A) You can think Django Migrations as version control system for your database/Model. 
+   It keeps track of changes done in your application Models/Table like adding a field, deleting a model, etc. 
+   Migrations in Django are stored as an on-disk format, referred to here as “migration files”. 
+   These files are actually just normal Python files with an agreed-upon object layout, written in a declarative style. 
+   A basic migration file looks like this:
+
+
+
+	from django.db import migrations, models
+
+	class Migration(migrations.Migration):
+
+    		dependencies = [('migrations', '0001_initial')]
+
+    operations = [
+        migrations.DeleteModel('Tribble'),
+        migrations.AddField('Author', 'rating', models.IntegerField(default=0)),
+    ]
+	
+	Further Reading https://docs.djangoproject.com/en/2.0/topics/migrations/
+
+21) How a request is processed in Django?
+
+A) In Django whenever a request is made by a user, it goes through the following steps:
+
+	Django determines the root URLconf module to use. Ordinarily, this is the value of the ROOT_URLCONF setting, but if the incoming HttpRequest object has a urlconf attribute (set by middleware), its value will be used in place of the ROOT_URLCONF setting.
+	Django loads that Python module and looks for the variable urlpatterns. This should be a Python list of django.urls.path() and/or django.urls.re_path() instances.
+	Django runs through each URL pattern, in order, and stops at the first one that matches the requested URL.
+	Once one of the URL patterns matches, Django imports and calls the given view, which is a simple Python function (or a class-based view). The view gets passed the following arguments:
+	An instance of HttpRequest.
+	If the matched URL pattern returned no named groups, then the matches from the regular expression are provided as positional arguments.
+	The keyword arguments are made up of any named parts matched by the path expression, overridden by any arguments specified in the optional kwargs argument to django.urls.path() or django.urls.re_path().
+	If no URL pattern matches, or if an exception is raised during any point in this process, Django invokes an appropriate error-handling view.
+
+ 
+
+22) When to use the iterator in Django ORM?
+
+A) Iterators are used for traversing an object in Python which implements iterator protocol. It consists of two methods __iter__() and next().
+In Django, a good use of iterator is when you are processing results that take up a large amount of available memory (lots of small objects or fewer large objects).
+For more clarification please read when to use and when to not use iterator() in the Python Django ORM
+https://stackoverflow.com/questions/12681653/when-to-use-or-not-use-iterator-in-the-django-orm
+
+23) When QuerySets are evaluated in Django?
+
+A)In Django, a QuerySet can be evaluated in Iteration, Slicing, Pickling/Caching, repr(),len(), list() and bool().
+
+24) How to check installed version of Django?
+
+A) By running below command on Terminal.You can check installed version of Django Framework.
+
+   "py -m django --version"
+
+25) How to set/unset session in Django?
+
+	Setting Session in Django
+
+	request.session['key'] = 'value'
+	Unset Session in Django
+
+	del request.session['key']
+
+26) What is a context in Django?
+
+A) In Django Context is a dictionary with variable names in the form of key and value like {varible1: 101, varible2: 102},when we pass this context to the template render method, {{ varible1 }} would be replaced with 101 and {{ varible2 }} with 102 in your template.
+
+27) Explain mixins in Django.
+
+A) A mixin is a special kind of multiple inheritances in Python. There are two main situations where mixins are used:
+
+	You want to provide a lot of optional features for a class.
+	You want to use one particular feature in a lot of different classes.
+	Read More from https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful
+
+
+28) How to get current page URI in Django template.
+
+A) You can use {{ request.path }} and {{ request.get_full_path }} to get current page URI in Django template
+
+
+29) List some popular websites built on Django framework?
+
+A) Following are the list of top 10 websites built on Django framework.
+	* Instagram
+	* Disqus
+	* Bitbucket
+	* Mozilla Firefox
+	* Pinterest
+	* NASA
+	* Onion
+	* The Washington Post
+	* Eventbrite
+	* Mahalo
+
+30) How to create an Constant in Django.
+
+A) To create a constant in Django. Open your settings.py file and add a variable like MY_CONST = “MY_VALUE”.
+  To use this constant in your views simply import setting like “Import settings in views.py” and use it as
+  settings.MY_CONST

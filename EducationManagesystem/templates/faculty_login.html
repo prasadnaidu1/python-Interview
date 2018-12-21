@@ -1,0 +1,26 @@
+<body >
+<table align="center" border="1">
+    <form action="/faculty_login/" method="post">
+        {% csrf_token %}
+    <tr>
+        <td> Faculty Login</td>
+
+    </tr>
+    <tr>
+        <td><input type="text" name="f_useridno" placeholder="USER IDNO" required></td>
+    </tr>
+    <tr>
+        <td><input required placeholder="Password" type="password" name="f_password"></td>
+    </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login">
+            </td>
+        </tr>
+        <tr>
+            <td>{{ status }}</td>
+        </tr>
+    </form>
+</table>
+
+</body>
